@@ -38,7 +38,12 @@ async def signup(user: UserIn):
     try:
         #hashed_password = pwd_context.hash(password)   # パスワードをハッシュ化
         users_db[user_id] = {"nickname": user_id, "password": password}   # DBへ格納
-        return {"user_id": user_id, "nickname": user_id}
+        return {
+                "message": "Account successfully created",
+                "user": {
+                    "user_id": user_id, "nickname": user_id
+                }
+            }
     except ValidationError as e:
         return ErrorResponse(
             message="Account creation failed",
