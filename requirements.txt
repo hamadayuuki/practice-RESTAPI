@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+qrcode
+opencv-python--headless
+pillow
+numpy
+pydantic
+passlib
